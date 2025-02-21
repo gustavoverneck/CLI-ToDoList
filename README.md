@@ -28,18 +28,15 @@ A command-line interface (CLI) for managing tasks. The task manager allows you t
    python3 todoi
 
 3. (Optional) Add bash alias
-  ```bash
-  echo 'alias todoi="python3 ~/path/to/Todoi"' >> ~/.bashrc  # or ~/.zshrc for Zsh ir ~/.config/fish/condig.fish for fish
-  source ~/.bashrc  # Apply changes
+   ```bash
+   echo 'alias todoi="python3 ~/path/to/Todoi"' >> ~/.bashrc  # or ~/.zshrc for Zsh ir ~/.config/fish/condig.fish for fish
+   source ~/.bashrc  # Apply changes
 
 ## Usage
-
-Run the script with commands:
-
-```bash
-python3 __main__.py [command] [arguments]
+ '''bash
+      python3 __main__.py [command] [arguments]
 
 or if you set up an alias:
 
-```bash
-todoi [command] [arguments]
+   ```bash
+   todoi [command] [arguments]
