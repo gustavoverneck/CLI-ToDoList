@@ -42,8 +42,8 @@ A command-line interface (CLI) for managing tasks. The task manager allows you t
    todoi [command] [arguments]
 
 ## Commands
-'-a' or 'add' - Add a new task
-'-a' or 'list' - List all tasks"
+'-a' or 'add' - Add a new task \\
+'-a' or 'list' - List all tasks" \\
 '-r' or 'remove' - Remove a task by index
 '-u' or 'update' - Update a task by index
 '-c' or 'complete' - Mark a task as complete
