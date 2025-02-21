@@ -103,11 +103,11 @@ class TaskManager:
         # Check if index is provided
         if len(self.args) == 0:
             raise ValueError("No index provided.")
+        self.args = self.args[0]
         if not self.args.isdigit():
             raise ValueError("Index must be an integer.")
         if int(self.args) > len(self.tasks):
             raise ValueError("Index out of range.")
-        self.args = self.args[0]
         index = int(self.args) - 1
         self.tasks[index]["status"] = "in progress"
         self.export_tasks()
