@@ -42,17 +42,15 @@ A command-line interface (CLI) for managing tasks. The task manager allows you t
    todoi [command] [arguments]
 
 ## Commands
-'-a' or 'add' - Add a new task
-
-'-a' or 'list' - List all tasks"
-
-'-r' or 'remove' - Remove a task by index
-'-u' or 'update' - Update a task by index
-'-c' or 'complete' - Mark a task as complete
-'-i' or 'incomplete' - Mark a task as incomplete
-'-p' or 'progress' - Mark a task as in progress
-'-lc' or 'list-complete' - List all complete tasks
-'-li' or 'list-incomplete' - List all incomplete tasks
-'-lp' or 'list-progress' - List all tasks in progress
-'-e' or 'export' - Export tasks to file
-'-h' or 'help' - Display help message
+ - '-a' or 'add' - Add a new task
+ - '-a' or 'list' - List all tasks"
+ - '-r' or 'remove' - Remove a task by index
+ - '-u' or 'update' - Update a task by index
+ - '-c' or 'complete' - Mark a task as complete
+ - '-i' or 'incomplete' - Mark a task as incomplete
+ - '-p' or 'progress' - Mark a task as in progress
+ - '-lc' or 'list-complete' - List all complete tasks
+ - '-li' or 'list-incomplete' - List all incomplete tasks
+ - '-lp' or 'list-progress' - List all tasks in progress
+ - '-e' or 'export' - Export tasks to file
+ - '-h' or 'help' - Display help message
