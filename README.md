@@ -33,10 +33,10 @@ A command-line interface (CLI) for managing tasks. The task manager allows you t
    source ~/.bashrc  # Apply changes
 
 ## Usage
- '''bash
-      python3 __main__.py [command] [arguments]
+1. Run with this commands:
+   ```bash
+   python3 __main__.py [command] [arguments]
 
-or if you set up an alias:
-
+2. Or if you set up an alias:
    ```bash
    todoi [command] [arguments]
