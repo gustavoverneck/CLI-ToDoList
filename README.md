@@ -29,7 +29,7 @@ A command-line interface (CLI) for managing tasks. The task manager allows you t
 
 3. (Optional) Add bash alias
    ```bash
-   echo 'alias todoi="python3 ~/path/to/Todoi"' >> ~/.bashrc  # or ~/.zshrc for Zsh ir ~/.config/fish/condig.fish for fish
+   echo 'alias todoi="python3 ~/path/to/Todoi"' >> ~/.bashrc  # or ~/.zshrc for Zsh or ~/.config/fish/condig.fish for fish
    source ~/.bashrc  # Apply changes
 
 ## Usage
