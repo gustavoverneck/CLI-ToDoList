@@ -14,12 +14,19 @@ sys.excepthook = custom_excepthook  # Set custom excepthook for more readable er
 
 # --------------------------------------------
 
+# Get the absolute path of the script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Ensure self.tasks_dir uses the correct path
+tasks_dir = os.path.join(script_dir, "tasks.json")  # Adjust the filename as needed
+    
+
 class TaskManager:
     def __init__(self):
         self.valid_commands = ["add", "list", "remove", "update", "complete", "incomplete", "progress", "list-complete", "list-incomplete", "list-progress", "export", "help"]
         self.short_commands = ["-a", "-l", "-r", "-u", "-c", "-i", "-p", "-lc", "-li", "-lp", "-e", "-h"]
         self.tasks = [] # List containing all tasks
-        self.tasks_dir = "tasks.json"
+        self.tasks_dir = tasks_dir # Path to the tasks file
         self.checkFile()    # Check if file exists
         self.read_from_file()   # Read tasks from file
         self.update_tasks_id()  # Update tasks id
@@ -119,9 +126,24 @@ class TaskManager:
             json.dump({"tasks": self.tasks}, f)
     
     def read_from_file(self):
-        with open(self.tasks_dir, "r") as f:
-            self.json_tasks = json.load(f)
-        self.tasks = self.json_tasks["tasks"]
+        try:
+            with open(self.tasks_dir, "r") as f:
+                self.json_tasks = json.load(f)
+            
+            # If the JSON is a list, assume it's the task list
+            if isinstance(self.json_tasks, list):
+                self.tasks = self.json_tasks
+            elif isinstance(self.json_tasks, dict) and "tasks" in self.json_tasks:
+                self.tasks = self.json_tasks["tasks"]
+            else:
+                print("Error: Unexpected JSON format.")
+                self.tasks = []
+        except FileNotFoundError:
+            print(f"Error: The file {self.tasks_dir} was not found.")
+            self.tasks = []
+        except json.JSONDecodeError:
+            print(f"Error: Could not parse JSON from {self.tasks_dir}.")
+            self.tasks = []
     
     def cmd_remove(self):
         # Check if index is provided
